@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-3">
+            <div class="fixed" style="position:fixed; height: 300px;">
+                <div class="fixed-wrapper" style="position:relative; overflow-y:auto; height:100%;">
+                    <table class="table">
+                        <thead>
+                        <th scope="col-md-3">Tickers</th>
+                        <td scope="col-md-3">Name</td>
+                        <th scope="col-md-3">Sector</td>
+                        <th scope="col-md-3">Previous Market Close</th>
+                        <th scope="col-md-3">52 Week High</th>
+                        <th scope="col-md-3">52 Week Low</th>
+                        <th scope="col-md-3">Market Capitalization</th>
+                        </thead>
+                        <tbody>
+                        {% for key, item in stock_infos.items %}
+                        <tr>
+                            <th scope="row">{{key}}</th>
+                            <td>{{item.Name}}</td>
+                            <td>{{item.Sector}}</td>
+                            <td>{{item.PreviousClose}}</td>
+                            <td>{{item.52WeekHigh}}</td>
+                            <td>{{item.52WeekLow}}</td>
+                            <td>{{item.MarketCap}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

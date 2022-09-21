@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+
+
+{% block content %}
+<br/>
+<br/>
+<div class="container text-center">
+  <div class="row">
+      <div class="col-md-10">
+          <h1 class="display-3">Welcome to the Trading Platform!</h1>
+          <p>This application is a model that calculates relative portfolio metrics for a given portfolio against a market benchmark. 
+              The model calculates a fair value of each stock on a monthly basis, and compares that value against the benchmark. 
+              If the fair value is lower than the market value, then we sell the stock, otherwise, the stock is kept. 
+              In this version, we keep around 10 stocks and sell the stock with the largest difference between market value and fair value.</p>
+          <p><a class="btn btn-primary btn-lg" href="{% url 'add_stocks' %}" role="button">Click to Add Stocks &raquo;</a></p>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+django==2.2
+numpy
+pandas
+yfinance
+warnings
+matplotlib
+python-dotenv

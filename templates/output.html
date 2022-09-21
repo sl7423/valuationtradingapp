@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+
+
+{% block content %}
+<br/>
+<br/>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="display-3">Returns of Portfolio v. Benchmark</h1>
+            {{ graph|safe }}
+          </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+  <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Returns</h2>
+        <p class="fs-3">{{portCAGR}} v. <span style="color:#f80439"> {{marketCAGR}} </span> </p>
+        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+      </div>
+      <div class="col-md-3">
+        <h2>Volatility (Risk)</h2>
+        <p class="fs-3">{{portVol}} v. <span style="color:#f80439"> {{marketVol}} </span> </p>
+        <!--  <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+      </div>
+      <div class="col-md-3">
+        <h2>Sharpe Ratio</h2>
+        <p class="fs-3">{{portSharpe}} v. <span style="color:#f80439"> {{marketSharpe}} </span> </p>
+        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+      </div>
+      <div class="col-md-3">
+        <h2>Max Drawdown</h2>
+        <p class="fs-3">{{portMaxDD}} v. <span style="color:#f80439"> {{marketMaxDD}} </span> </p>
+        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class ='row'>
+        <p class="fs-6"><span style="color:#f80439; font-style: italic;"> Color </span> indicates market values </p> 
+    </div>
+  <br/>
+  
+</div>
+{% endblock %}

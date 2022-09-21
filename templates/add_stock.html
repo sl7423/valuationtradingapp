@@ -1,0 +1,48 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<br/>
+<div class="container-md" style="text-align: center">
+    <h1> Stock Page </h1>
+    <br/>
+
+      
+          <div class="form-inline" style="display: inline">
+            <form action = "{% url 'add_stocks' %}" class="form-inline my-2 my-lg-0" method="POST">
+                {% csrf_token %}
+                <input class="col-md-2 mb-3" type="search" placeholder="Add To Portfolio" aria-label="Search"  name="ticker">
+                <button class="btn btn-primary" type="submit">Add Stock</button>
+            </form> 
+          </div>
+
+          {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible " role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+      
+
+    
+        <div class="container-sm" style="text-align: center; ">
+          <table class="table table-hover">
+          <thead>
+            <th scope="col">Tickers</th>
+            <th scope="col">Delete Stock</th>
+          </thead>
+          <tbody>
+            {% for item in tickers %}
+            <tr>
+                <th scope="row">{{item}}</th>
+                <td><a href="{% url 'delete' item.id %}">Delete Stock</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+</div>
+<br/>
+
+
+{% endblock %}
